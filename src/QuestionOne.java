@@ -1,5 +1,14 @@
 import java.util.Scanner;
 
+/*-------------------------------------------------------------------------------------------
+1. Write a program that reads an integer value and prints the sum of all even integers
+   between 2 and the input value, inclusive. Print an error message if the input value is less
+   than 2. Prompt accordingly.
+
+Giuseppe Indovina
+10/28/24
+ITEC2610C
+--------------------------------------------------------------------------------------------*/
 public class QuestionOne {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
