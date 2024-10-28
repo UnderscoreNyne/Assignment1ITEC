@@ -2,6 +2,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+/*-------------------------------------------------------------------------------------------
+5. Write a program that reads an arbitrary number of integers that are in the range 0 to 50
+inclusive and counts how many occurrences of each are entered. Indicate the end of the
+input by a value outside of the range. After all input has been processed., print all of the
+values (with the number of occurrences) that were entered one or more time.
+
+Giuseppe Indovina
+10/27/24
+ITEC2610C
+--------------------------------------------------------------------------------------------*/
 public class QuestionFive {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
