@@ -14,10 +14,28 @@ ITEC2610C
 --------------------------------------------------------------------------------------------*/
 public class QuestionFive {
     public static void main(String[] args) {
+
+        // prompt for numbers to add to the numList.
+        ArrayList<Integer> numList = numberPrompt();
+
+        // sort Array List to prepare for output.
+        Collections.sort(numList);
+
+        // create a numList without duplicate numbers so that there aren't duplicate outputs for the same number.
+        ArrayList<Integer> numListTrimmed = trimList(numList);
+
+        System.out.println();
+
+        // output list of numbers that occurred more than once.
+        outputList(numList,numListTrimmed);
+    }
+
+    // shows a prompt to collect numbers from 1-50 and put them in a list.
+    public static ArrayList<Integer> numberPrompt(){
         Scanner scan = new Scanner(System.in);
+
         int number;
         ArrayList<Integer> numList = new ArrayList<>();
-
 
         // prompt for user input
         do{
@@ -30,24 +48,25 @@ public class QuestionFive {
             }
         }while(number>=1 && number<=50);
 
-        // sort Array List to prepare for output.
-        Collections.sort(numList);
+        return numList;
+    }
 
-        // create a numList without duplicate numbers so that there aren't duplicate outputs for the same number.
-        ArrayList<Integer> numListTrimmed = new ArrayList<>();
-
-        for(int i = 0; i<=numList.size()-1; i++){
-            if(!numListTrimmed.contains(numList.get(i))){
-                numListTrimmed.add(numList.get(i));
+    // trims the duplicate items from a list
+    public static ArrayList<Integer> trimList(ArrayList<Integer> list){
+        ArrayList<Integer> trimmedList = new ArrayList<>();
+        for(int i = 0; i<=list.size()-1; i++){
+            if(!trimmedList.contains(list.get(i))){
+                trimmedList.add(list.get(i));
             }
         }
 
-        // spacing to separate the output from the input prompt
-        System.out.println();
+        return trimmedList;
+    }
 
-        // output list of numbers that occurred more than once.
-        for(int i = 0; i<=numListTrimmed.size()-1; i++){
-            System.out.println(numListTrimmed.get(i) + "|" + Collections.frequency(numList, numListTrimmed.get(i)));
+    // outputs a list of numbers with their frequency.
+    public static void outputList(ArrayList<Integer> list, ArrayList<Integer> trimmedList){
+        for(int i = 0; i<=trimmedList.size()-1; i++){
+            System.out.println(trimmedList.get(i) + "|" + Collections.frequency(list, trimmedList.get(i)));
         }
     }
 }

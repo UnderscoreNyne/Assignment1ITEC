@@ -26,25 +26,16 @@ public class QuestionFour {
 
         for (char c : sentenceArray) {
             switch (c) {
-                case 'a':
-                    a += 1;
-                    break;
-                case 'e':
-                    e += 1;
-                    break;
-                case 'i':
-                    i += 1;
-                    break;
-                case 'o':
-                    o += 1;
-                    break;
-                case 'u':
-                    u += 1;
-                    break;
-                default:
-                    if(c != ' '){
+                case 'a' -> a += 1;
+                case 'e' -> e += 1;
+                case 'i' -> i += 1;
+                case 'o' -> o += 1;
+                case 'u' -> u += 1;
+                default -> {
+                    if (c != ' ') {
                         nonvowel += 1;
                     }
+                }
             }
         }
 
